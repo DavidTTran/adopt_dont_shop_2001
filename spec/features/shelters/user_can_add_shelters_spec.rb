@@ -17,26 +17,27 @@ describe "shelters new page" do
 
     visit "/shelters/new"
 
-    expect(page).to have_text("Name:")
-    expect(page).to have_text("Address:")
-    expect(page).to have_text("City:")
-    expect(page).to have_text("State:")
-    expect(page).to have_text("Zip Code:")
+    expect(page).to have_text("Name")
+    expect(page).to have_text("Address")
+    expect(page).to have_text("City")
+    expect(page).to have_text("State")
+    expect(page).to have_text("Zip")
     expect(page).to have_button("Create Shelter")
-    expect(page).to have_field("shelter[name]", :type=>"text")
-    expect(page).to have_field("shelter[address]", :type=>"text")
-    expect(page).to have_field("shelter[city]", :type=>"text")
-    expect(page).to have_field("shelter[state]", :type=>"text")
-    expect(page).to have_field("shelter[zip]", :type=>"number")
+    expect(page).to have_field(:name, :type=>"text")
+    expect(page).to have_field(:address, :type=>"text")
+    expect(page).to have_field(:city, :type=>"text")
+    expect(page).to have_field(:state, :type=>"text")
+    expect(page).to have_field(:zip, :type=>"number")
 
-    fill_in "shelter[name]", with: "Test Shelter"
-    fill_in "shelter[address]", with: "Test Address"
-    fill_in "shelter[city]", with: "Test City"
-    fill_in "shelter[state]", with: "Test State"
-    fill_in "shelter[zip]", with: "Test Zip"
-
+    fill_in :name, with: "Test Shelter"
+    fill_in :address, with: "Test Address"
+    fill_in :city, with: "Test City"
+    fill_in :state, with: "Test State"
+    fill_in :zip, with: "Test Zip"
+    
     click_button("Create Shelter")
 
+    expect(current_path).to eq("/shelters")
     expect(page).to have_link(shelter_1.name)
     expect(page).to have_link(shelter_2.name)
     expect(page).to have_link("Test Shelter")

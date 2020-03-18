@@ -7,18 +7,23 @@ class SheltersController < ApplicationController
   end
 
   def add
-    shelter = Shelter.new({
-      name: params[:shelter][:name],
-      address: params[:shelter][:address],
-      city: params[:shelter][:city],
-      state: params[:shelter][:state],
-      zip: params[:shelter][:zip]
-      })
-    shelter.save
+    Shelter.create(shelter_params)
     redirect_to '/shelters'
+  end
+
+  def shelter_params
+    params.permit(:name, :address, :city, :state, :zip)
   end
 
   def show
     @shelter = Shelter.find(params[:id])
   end
+
+  def edit
+  end
+
+  def update
+    require "pry"; binding.pry
+  end
+
 end
