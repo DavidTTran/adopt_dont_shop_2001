@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "shelters index page" do
+describe "shelters page" do
   it "can update shelter info" do
     shelter_1 = Shelter.create(name:    "Dumb Friends League",
                                address: "123 Fake Street",
