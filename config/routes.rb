@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   get '/shelters/new', to: 'shelters#new'
   post '/shelters', to: 'shelters#add'
   get '/shelters/:id', to: 'shelters#show'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get '/shelters/:id/edit', to: 'shelters#edit'
+  patch '/shelters/:id', to: 'shelters#update'
 end
