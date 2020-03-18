@@ -22,8 +22,12 @@ describe "shelters new page" do
     expect(page).to have_text("City:")
     expect(page).to have_text("State:")
     expect(page).to have_text("Zip Code:")
-    expect(page).to have_selector(:link_or_button, "Create Shelter")
+    expect(page).to have_button("Create Shelter")
     expect(page).to have_field("shelter[name]", :type=>"text")
+    expect(page).to have_field("shelter[address]", :type=>"text")
+    expect(page).to have_field("shelter[city]", :type=>"text")
+    expect(page).to have_field("shelter[state]", :type=>"text")
+    expect(page).to have_field("shelter[zip]", :type=>"number")
 
     fill_in "shelter[name]", with: "Test Shelter"
     fill_in "shelter[address]", with: "Test Address"
@@ -33,8 +37,8 @@ describe "shelters new page" do
 
     click_button("Create Shelter")
 
-    expect(page).to have_content(shelter_1.name)
-    expect(page).to have_content(shelter_2.name)
-    expect(page).to have_content("Test Shelter")
+    expect(page).to have_link(shelter_1.name)
+    expect(page).to have_link(shelter_2.name)
+    expect(page).to have_link("Test Shelter")
   end
 end
