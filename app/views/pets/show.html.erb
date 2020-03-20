@@ -1,0 +1,15 @@
+<style>
+  body {
+    text-align:center
+  }
+
+</style>
+
+<body>
+  <h1><%= @pet.name %></h1>
+  <img src="<%= @pet.image %>" width= "300px" height= "300px">
+    <p>Description: <%= @pet.description %></p>
+    <p>Age: <%= @pet.approximate_age %></p>
+    <p>Sex: <%= @pet.sex %></p>
+    <p>Adoption Status: <%= @pet.adoption_status %></p>
+</body>
