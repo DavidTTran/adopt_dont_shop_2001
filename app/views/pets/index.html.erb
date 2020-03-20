@@ -12,10 +12,12 @@ ul {
 
 <% @pets.each do |pet| %>
   <ul>
-    <img src="<%= pet.image %>" width="200" height="200"><a href="/pets/<%= pet.id %>"</a><br>
+    <img src="<%= pet.image %>" width="200" height="200"><br>
     <li>Name: <%= pet.name %></li>
     <li>Sex: <%= pet.sex %></li>
     <li>Approximate Age: <%= pet.approximate_age %></li>
     <li>Shelter Name: <%= pet.shelter.name %></li>
+    <li><%= link_to "Update Pet", "/pets/#{pet.id}/edit", method: :get %>
+    <li><%= link_to "Delete Pet", "/pets/#{pet.id}", method: :delete %>
   </ul>
 <% end %>
