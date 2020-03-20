@@ -19,5 +19,9 @@ describe "shelters index page" do
     expect(page).to have_content(shelter_2.name)
     expect(page).to have_link("Pawty Please")
     expect(page).to have_link("New Shelter", href:"shelters/new")
+
+    expect(page).to have_link("Update Shelter", href: "/shelters/#{shelter_1.id}/edit")
+    expect(page).to have_link("Update Shelter", href: "/shelters/#{shelter_2.id}/edit")
+    expect(page).to have_link("Delete Shelter")
   end
 end
