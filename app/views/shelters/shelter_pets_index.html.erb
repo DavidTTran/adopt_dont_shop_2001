@@ -1,5 +1,3 @@
-<h3><%= @pets.first.shelter.name %></h3>
-<h4>Shelter Pets Index</h4>
 <style>
 
 ul {
@@ -10,6 +8,10 @@ ul {
 }
 
 </style>
+
+<h2><%= @pets.first.shelter.name %></h2>
+<h3>Shelter Pets Index</h3>
+<h4><a href="/shelters/<%= @pets.first.shelter.id %>/pets/new">Create Pet</a></h4>
 
 <% @pets.each do |pet| %>
   <ul>
