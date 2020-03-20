@@ -31,13 +31,7 @@ class SheltersController < ApplicationController
   end
 
   def shelter_pets_index
-    @pets = []
-    
-    Pet.find_each do |pet|
-      if pet.shelter_id == params[:shelter_id].to_i
-        @pets << pet
-      end
-    end
+    @shelter = Shelter.find(params[:shelter_id])
   end
 
   private
