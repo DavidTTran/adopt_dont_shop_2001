@@ -1,5 +1,8 @@
 <a href="/shelters">Shelters Index</a>
+
+
 <h1><%= @shelter.name %></h1>
+<h4><%= link_to "Shelter's Pets", "/shelters/#{@shelter.id}/pets" %></h4><br>
 <p>
   <%= @shelter.address %>,
   <%= @shelter.city %>,

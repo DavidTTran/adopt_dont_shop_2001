@@ -9,13 +9,13 @@ ul {
 
 </style>
 
-<h2><%= @pets.first.shelter.name %></h2>
-<h3>Shelter Pets Index</h3>
-<h4><a href="/shelters/<%= @pets.first.shelter.id %>/pets/new">Create Pet</a></h4>
+<h1><%= @shelter.name %></h1>
+<h2>Shelter Pets Index</h2><br>
+<h4><a href="/shelters/<%= @shelter.id %>/pets/new">Create Pet</a></h4>
 
-<% @pets.each do |pet| %>
+<% @shelter.pets.each do |pet| %>
   <ul>
-    <img src="<%= pet.image %>" width="200" height="200"><br>
+    <img src="<%= pet.image %>" width="200" height="200"><a href="/pets/<%= pet.id%>"></a><br>
     <li>Name: <%= pet.name %></li>
     <li>Sex: <%= pet.sex %></li>
     <li>Approximate Age: <%= pet.approximate_age %></li>
