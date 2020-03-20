@@ -30,6 +30,10 @@ class SheltersController < ApplicationController
     redirect_to "/shelters"
   end
 
+  def shelter_pets_index
+    @pets = Pet.select(:shelter_id == params[:shelter_id])
+  end
+
   private
   def shelter_params
     params.permit(:name, :address, :city, :state, :zip)
