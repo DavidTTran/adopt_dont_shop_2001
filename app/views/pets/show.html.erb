@@ -14,4 +14,5 @@
     <p>Adoption Status: <%= @pet.adoption_status %></p>
 </body>
 
+<h4><%= link_to "Update Pet", "/pets/#{@pet.id}/edit" %></h4>
 <h4><%= link_to "Pets Index", "/pets" %></h4>
