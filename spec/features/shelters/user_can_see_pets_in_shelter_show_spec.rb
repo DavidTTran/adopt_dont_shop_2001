@@ -35,5 +35,9 @@ describe "as a visitor" do
     expect(page).to have_css("img[src*='#{pet_2.image}']")
     expect(page).to have_no_content(pet_3.name)
 
+    expect(page).to have_link("Update Pet", href: "/pets/#{pet_1.id}/edit")
+    expect(page).to have_link("Update Pet", href: "/pets/#{pet_2.id}/edit")
+    expect(page).to have_link("Delete Pet")
+
   end
 end

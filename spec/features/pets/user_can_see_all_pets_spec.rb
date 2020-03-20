@@ -28,5 +28,9 @@ describe "pets index page" do
     expect(page).to have_content(pet_2.name)
     expect(page).to have_content(pet_2.approximate_age)
 
+    expect(page).to have_link("Update Pet", href: "/pets/#{pet_1.id}/edit")
+    expect(page).to have_link("Update Pet", href: "/pets/#{pet_2.id}/edit")
+    expect(page).to have_link("Delete Pet")
+
   end
 end
