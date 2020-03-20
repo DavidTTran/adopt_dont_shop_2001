@@ -10,14 +10,14 @@ describe "pets index page" do
                                zip:     "80104")
 
     pet_1 = shelter_1.pets.create(name: "Buddy",
-                       approximate_age: 6,
-                       sex: "Male",
-                       image: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/single-minded-royalty-free-image-997141470-1558379890.jpg?crop=0.671xw:1.00xh;0.0847xw,0&resize=640:*")
+                                  approximate_age: 6,
+                                  sex: "Male",
+                                  image: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/single-minded-royalty-free-image-997141470-1558379890.jpg?crop=0.671xw:1.00xh;0.0847xw,0&resize=640:*")
 
     pet_2 = shelter_1.pets.create(name: "King",
-                       approximate_age: 5,
-                       sex: "Male",
-                       image: "https://www.espree.com/sites/default/files/2019-10/DobermanPinscher.png")
+                                  approximate_age: 5,
+                                  sex: "Male",
+                                  image: "https://www.espree.com/sites/default/files/2019-10/DobermanPinscher.png")
 
     visit "/pets"
 
