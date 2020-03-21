@@ -3,23 +3,25 @@
 ul {
   list-style-type: none;
   padding: 25px;
-  text-align: center;
+}
+
+.edit {
+  color: white;
 }
 
 </style>
 
 
-<h1><%= @shelter.name %></h1>
-<h2>Shelter Pets Index</h2>
-<h4><a href="/shelters/<%= @shelter.id %>/pets/new">Create Pet</a></h4>
+<h1><%= @shelter.name %> - Our Pets</h1>
+<a href="/shelters/<%= @shelter.id %>/pets/new">Create Pet</a>
 
 <% @shelter.pets.each do |pet| %>
   <ul>
-    <img src="<%= pet.image %>" width="200" height="200" align="left"><br>
-    <br><li>Name: <%= link_to "#{pet.name}", "/pets/#{pet.id}" %></li>
+    <img src="<%= pet.image %>" width="150" height="150" align="left"><br>
+    <li>Name: <%= link_to "#{pet.name}", "/pets/#{pet.id}" %></li>
     <li>Sex: <%= pet.sex %></li>
     <li>Approximate Age: <%= pet.approximate_age %></li><br>
-    <li><%= link_to "Update Pet", "/pets/#{pet.id}/edit", method: :get %>
-    <li><%= link_to "Delete Pet", "/pets/#{pet.id}", method: :delete %>
+    <li class="edit"><%= link_to "Update Pet", "/pets/#{pet.id}/edit", method: :get %>
+    <li class="edit"><%= link_to "Delete Pet", "/pets/#{pet.id}", method: :delete %>
   </ul>
 <% end %>
