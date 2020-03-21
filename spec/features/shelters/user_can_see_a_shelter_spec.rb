@@ -16,6 +16,6 @@ describe "shelter page" do
     expect(page).to have_content(shelter_1.city)
     expect(page).to have_content(shelter_1.state)
     expect(page).to have_content(shelter_1.zip)
-    expect(page).to have_link("Shelters Index")
+    expect(page).to have_link("Our Shelters")
   end
 end
