@@ -26,6 +26,11 @@ li {
   </ul>
 
   <li><%= link_to "Update Pet", "/pets/#{@pet.id}/edit" %></li>
+  <% if @pet.adoption_status == "Adoptable" %>
+    <%= link_to "Change to Adoption Pending", "/pets/#{@pet.id}/pending", method: :patch %>
+  <% else %>
+    <%= link_to "Change to Adoptable", "/pets/#{@pet.id}/adoptable", method: :patch %>
+  <% end %>
   <li><%= link_to "Delete Pet", "/pets/#{@pet.id}", method: :delete %></li>
 
 </div>
