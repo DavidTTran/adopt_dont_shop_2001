@@ -8,7 +8,7 @@ ul {
 </style>
 
 <h1>Our Pets</h1>
-<% @pets.sort_by { |pet| pet.adoption_status } %>
+
 <% @pets.each do |pet| %>
   <ul>
     <img src="<%= pet.image %>" width="200" height="200" align="left"><br>
