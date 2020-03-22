@@ -22,6 +22,6 @@ ul {
     <li>Sex: <%= pet.sex %></li>
     <li>Approximate Age: <%= pet.approximate_age %></li><br>
     <li class="edit"><%= link_to "Update Pet", "/pets/#{pet.id}/edit", method: :get %>
-    <li class="edit"><%= link_to "Delete Pet", "/pets/#{pet.id}", method: :delete %>
+    <li class="edit"><%= link_to "Delete Pet", "/shelters/#{@shelter.id}/pets/#{pet.id}", method: :delete %>
   </ul>
 <% end %>
